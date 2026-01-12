@@ -1,3 +1,18 @@
 create end point for students ?
 create end point starting and ending f&d in between 1 or more fod are allows
 create end point which will start with s and ends with d
+create end points/API 
+1. to display info of students
+2. to display info of university
+
+create endpoint which will accept dob of student and validate if student is eligible for apply in a professional course
+
+create node project to perform operation of todo list
+
+https://www.udemy.com/course/web-development-zero-to-hero-by-creating-apps/?couponCode=BFE265CFB9E77757E0C6
+
+//create  a react class based component that implement a calculator,
+//implement a grid of butttons to display basic calculator.
+//display a textbox that will be disable and it will be used to display userinput
+//perform basic operations and display the result
+//+,-,*,/, %,**

@@ -1,6 +1,13 @@
 const express = require('express')
+const birds = require('./birds')
+const university = require('./university')
+const eligibility = require('./eligibility')
 const app = express()
 const port = 3000
+app.use(express.json())
+app.use('/birds', birds)
+app.use('/university', university)
+app.use('/eligibility',eligibility)
 
 app.get('/', (req, res) => res.send("Hello World!"))
 app.post('/', (req, res) => res.send("From post"))
@@ -44,3 +51,25 @@ app.get('/s*d', (req, res) => {
 app.get(/^\/fo*d$/, (req, res) => {
   res.send(`From Fod`);
 });
+
+app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
+
+app.route('/eligibility')
+  .get((req, res) => {
+    res.send('Get DOB')
+  })
+  .post((req, res) => {
+    res.send('Add DOB')
+  })
+  .put((req, res) => {
+    res.send('Update DOB')
+  })
