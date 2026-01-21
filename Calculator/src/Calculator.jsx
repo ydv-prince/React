@@ -89,6 +89,7 @@ class Calculator extends Component {
         <button onClick={() => this.onOperatorClick("/")}>//</button>
         <button onClick={() => this.onOperatorClick("**")}>**</button>
         <button onClick={() => this.onEvaluteClick()}>=</button>
+        <button onClick={() => this.onEvaluteClick()}>Clear</button>
       </>
     );
   }
