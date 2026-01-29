@@ -24,9 +24,7 @@ app.get('/todo/:id', (req, res) => {
     let todos = readData()
     let ind = todos.findIndex((todo) => todo.id == req.params.id)
     if (ind == -1) {
-        return res.status(401).json({
-            messgae: "Data not found with id :" + req.params.id
-        })
+            message: "Data not found with id :" + req.params.id
     }
     res.json(todos[ind])
 })
@@ -39,8 +37,6 @@ app.post('/todo', (req, res) => {
         isCompleted: false
     }
     todos.push(newTodo)
-    saveData(todos)
-    res.json(newTodo)
 })
 app.put('/todo/:id', (req, res) => {
     let todos = readData()
@@ -54,8 +50,6 @@ app.put('/todo/:id', (req, res) => {
     res.status(201).json({
         messgae: "Data updated with id :" + req.params.id
     })
-    saveData(todos)
-    res.json(newTodo)
 })
 app.delete('/todo/:id', (req, res) => {
     let todos = readData()
@@ -69,7 +63,5 @@ app.delete('/todo/:id', (req, res) => {
     res.json({
         message: "Data deleted"
     })
-    saveData(todos)
-    res.json(newTodo)
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
