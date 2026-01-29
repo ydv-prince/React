@@ -16,3 +16,5 @@ https://www.udemy.com/course/web-development-zero-to-hero-by-creating-apps/?coup
 //display a textbox that will be disable and it will be used to display userinput
 //perform basic operations and display the result
 //+,-,*,/, %,**
+
+//create api/endpoints to perfrom operation on todo.
