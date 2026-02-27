@@ -1,0 +1,71 @@
+### Blogging API Test Requests
+
+# @name Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "password": "mySecurePassword"
+}
+
+###
+
+# @name Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "jane@example.com",
+    "password": "mySecurePassword"
+}
+
+###
+
+# @name CreatePost
+# Replace {{token}} with the token from Login
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "My First Architecture Post",
+    "content": "Building APIs with the Controller-Service pattern is incredibly satisfying!",
+    "imageUrl": "https://example.com/placeholder.jpg"
+}
+
+###
+
+# @name GetFeed
+GET http://localhost:5000/api/posts
+
+###
+
+# @name ToggleLike
+# Replace {{postId}} with an actual post ID
+PUT http://localhost:5000/api/posts/{{postId}}/like
+Authorization: Bearer {{token}}
+
+###
+
+# @name AddComment
+POST http://localhost:5000/api/posts/{{postId}}/comment
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "text": "This is a fantastic tutorial! Thanks for sharing."
+}
+
+###
+
+# @name AddReply
+# Replace {{commentId}} with an actual comment ID
+POST http://localhost:5000/api/posts/{{postId}}/comment/{{commentId}}/reply
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "text": "I completely agree, the architecture makes so much sense!"
+}
